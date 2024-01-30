@@ -18,7 +18,6 @@ public class TimerRunner {
 
 
   public void run() {
-
     System.out.println(COMMAND_MESSAGE);
     Scanner scanner = new Scanner(System.in);
     while (scanner.hasNext()) {
