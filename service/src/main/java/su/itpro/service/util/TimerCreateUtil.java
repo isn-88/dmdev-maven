@@ -1,16 +1,16 @@
 package su.itpro.service.util;
 
 import java.time.LocalDateTime;
+import lombok.experimental.UtilityClass;
 import su.itpro.common.entity.Timer;
 
+@UtilityClass
 public class TimerCreateUtil {
 
-  private static final String DEFAULT_TIMER_PREFIX_NAME = "default-";
+  private final String DEFAULT_TIMER_PREFIX_NAME = "default-";
 
-  private TimerCreateUtil() {
-  }
 
-  public static Timer createDefaultTimer() {
+  public Timer createDefaultTimer() {
     LocalDateTime start = LocalDateTime.now();
     String name = DEFAULT_TIMER_PREFIX_NAME + start.getNano();
     return new Timer(name, LocalDateTime.now());

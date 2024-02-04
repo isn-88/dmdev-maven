@@ -2,19 +2,18 @@ package su.itpro.common.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public class TimeConverter {
 
-  private static final String PATTERN = "dd.MM.yyyy HH:mm:ss";
+  private final String PATTERN = "dd.MM.yyyy HH:mm:ss";
 
-  private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
+  private final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(PATTERN);
 
 
-  private TimeConverter() {
-  }
-
-  public static String fromTime(LocalDateTime time) {
-    return formatter.format(time);
+  public String fromTime(LocalDateTime time) {
+    return FORMATTER.format(time);
   }
 
 }
